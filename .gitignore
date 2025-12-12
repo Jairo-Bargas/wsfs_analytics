@@ -1,0 +1,18 @@
+# Ignorar todos los datos crudos
+data_raw/
+data_raw/**/*
+data_processed/
+data_processed/**/*
+outputs/
+
+
+# Ignorar archivos pesados
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.json
+
+# Ignorar archivos temporales
+__pycache__/
+*.pyc
