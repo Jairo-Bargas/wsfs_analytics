@@ -2,7 +2,7 @@
 -- 1. PRIORIDAD 1: Tablas sin dependencias (customer, parts)
 CREATE TABLE customer (
     customer_id SERIAL PRIMARY KEY,
-    customer_number VARCHAR(40),
+    customer_number VARCHAR(40) UNIQUE,
     customer_name VARCHAR(50) NOT NULL,
     creation_date DATE,
     department_city VARCHAR(50),
@@ -14,7 +14,7 @@ CREATE TABLE customer (
 
 CREATE TABLE parts (
     part_id SERIAL PRIMARY KEY,
-    part_number VARCHAR(50),
+    part_number VARCHAR(50) UNIQUE,
     description VARCHAR(70) NOT NULL,
     category VARCHAR(50),
     unit_cost NUMERIC(10,2),
@@ -26,7 +26,7 @@ CREATE TABLE parts (
 -- 2. PRIORIDAD 2: Tablas que dependen solo de customer/parts
 CREATE TABLE equipment (
     equipment_id SERIAL PRIMARY KEY,
-    serial_number VARCHAR(50),
+    serial_number VARCHAR(50) UNIQUE,
     model VARCHAR(50),
     year INTEGER,
     customer_id INTEGER NOT NULL,
