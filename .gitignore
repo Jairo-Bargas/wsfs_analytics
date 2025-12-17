@@ -22,3 +22,11 @@ __pycache__/
 #Entornos virtuales 
 .venv/
 venv/
+
+# Docker
+docker/.env
+docker/postgres_data/
+
+# Python
+__pycache__/
+*.pyc
